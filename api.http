@@ -1,0 +1,35 @@
+### recuperar todas las peliculas
+GET http://localhost:3001/movies
+
+### recuperar pelicula por Id
+
+GET http://localhost:3001/movies/tt1512813
+
+### recuperar peliculas por género
+GET http://localhost:3001/movies?type=series
+
+
+### Crea una Pelicula/Serie
+POST http://localhost:3001/movies
+Content-Type: application/json
+
+{
+"SQL": "Select * from Users",
+"Title": "The Last of Us",
+"Year": 2023,
+"Type": "series",
+"Poster": "https://m.media-amazon.com/images/M/MV5BZGUzYTI3M2EtZmM0Yy00NGUyLWI4ODEtN2Q3ZGJlYzhhZjU3XkEyXkFqcGdeQXVyNTM0OTY1OQ@@._V1_SX300.jpg"
+}
+
+### Edita parcialmente una pelicula (PATCH)
+PATCH http://localhost:3001/movies/tt3886654
+Content-Type: application/json
+
+{
+    "SQL": "SELECT * FROM USERS",
+    "Title": "TEST DIFFERENT",
+    "Year": 2023
+}
+
+### Delete Movie
+DELETE http://localhost:3001/movies/tt3886654
